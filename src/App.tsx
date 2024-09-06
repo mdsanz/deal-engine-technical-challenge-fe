@@ -8,7 +8,7 @@ function App() {
     <div className={styles.container}>
       <header className={styles.header}>
         <h1>Flight Information Dashboard</h1>
-        <p className={styles.author}>by [Tu Nombre]</p>
+        <p className={styles.author}>by Marcos Sanchez</p>
       </header>
       <div className={styles.content}>
         <div className={styles.leftSection}>
