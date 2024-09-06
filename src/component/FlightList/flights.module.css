@@ -1,6 +1,38 @@
 .flightList {
     display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    justify-content: center;
-}
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  
+  /* Styles for the "Load More" button */
+  .loadMoreButton {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .loadMoreButton:hover {
+    background-color: #45a049;
+  }
+  
+  .loadMoreButton:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  /* Adjust layout for smaller screens */
+  @media (max-width: 768px) {
+    .flightList {
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+  }

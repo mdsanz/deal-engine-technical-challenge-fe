@@ -1,8 +1,4 @@
-interface WeatherData {
-  current: {
-    temp: number;
-  };
-}
+import { WeatherData } from "../interfaces/weather.interface";
 
 let weatherCache: Record<string, WeatherData> = {};
 
