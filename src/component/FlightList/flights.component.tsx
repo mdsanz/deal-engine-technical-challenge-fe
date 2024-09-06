@@ -11,7 +11,7 @@ export const Flights = () => {
         fetch("http://localhost:3000/airport/")
             .then((response) => response.json())
             .then((data) => {
-                console.log("si paso?")
+                console.log("si paso?");
                 setFlights(data);
                 setLoading(false);
             })
@@ -25,10 +25,7 @@ export const Flights = () => {
     return (
         <div className={styles.flightList}>
             {flights.map((flight) => (
-                <FlightCard 
-                    key={`${flight.flight_num}-${flight.origin}-${flight.destination}`}
-                    flight={flight}
-                />
+                <FlightCard key={flight.id} flight={flight} />
             ))}
         </div>
     );

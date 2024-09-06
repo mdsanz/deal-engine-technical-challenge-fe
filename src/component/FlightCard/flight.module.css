@@ -1,20 +1,27 @@
 .flightCard {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 16px;
-    max-width: 300px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.flightCardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flightCardExpanded {
+    padding-top: 10px;
+    transition: max-height 0.5s ease;
+    max-height: 500px;
 }
 
 .flightCard:hover {
-    transform: scale(1.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-.flightDetails {
-    margin-top: 10px;
-}
-
-.flightDetails p {
-    margin: 4px 0;
+.flightCardExpanded p {
+    margin: 0;
 }
