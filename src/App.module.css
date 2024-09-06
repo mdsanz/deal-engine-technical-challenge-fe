@@ -1,0 +1,66 @@
+.container {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f4f4f9;
+    min-height: 100vh;
+  }
+  
+  /* Header styles */
+  .header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .header h1 {
+    font-size: 36px;
+    color: #333;
+    margin: 0;
+  }
+  
+  .author {
+    font-size: 18px;
+    color: #777;
+    margin-top: 10px;
+  }
+  
+  /* Main content area */
+  .content {
+    display: flex;
+    gap: 40px;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  /* Left and right sections */
+  .leftSection {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .rightSection {
+    flex: 2;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Make layout responsive */
+  @media (max-width: 768px) {
+    .content {
+      flex-direction: column;
+    }
+  
+    .leftSection,
+    .rightSection {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }

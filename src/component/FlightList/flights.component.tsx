@@ -5,28 +5,42 @@ import styles from "./flights.module.css";
 
 export const Flights = () => {
     const [flights, setFlights] = useState<Flight[]>([]);
-    const [loading, setLoading] = useState<boolean>(true);
+    const [page, setPage] = useState<number>(1);
+    const [isLoadingMore, setIsLoadingMore] = useState<boolean>(false); // Para manejar el estado de "cargar más"
 
     useEffect(() => {
-        fetch("http://localhost:3000/airport/")
+        setIsLoadingMore(true);
+        fetch(`http://localhost:3000/airport?page=${page}`)
             .then((response) => response.json())
             .then((data) => {
-                console.log("si paso?");
-                setFlights(data);
-                setLoading(false);
+                setFlights((prevFlights) => [...prevFlights, ...data]); 
+                setIsLoadingMore(false); 
             })
-            .catch((error) => console.error("Error fetching flights:", error));
-    }, []);
+            .catch(() => {
+                setIsLoadingMore(false);
+            });
+    }, [page]);
 
-    if (loading) {
-        return <p>Loading flights...</p>;
-    }
+    const handleLoadMore = () => {
+        setIsLoadingMore(true);
+        setPage((prevPage) => prevPage + 1); 
+    };
 
     return (
-        <div className={styles.flightList}>
-            {flights.map((flight) => (
-                <FlightCard key={flight.id} flight={flight} />
-            ))}
-        </div>
+        <>
+            <div className={styles.flightList}>
+                {flights.map((flight) => (
+                    <FlightCard key={flight.id} flight={flight} />
+                ))}
+            </div>
+            <button
+                onClick={handleLoadMore}
+                className={styles.loadMoreButton}
+                disabled={isLoadingMore}
+            >
+                {isLoadingMore ? "Loading..." : "Ver más"}
+            </button>
+        </>
     );
 };
+

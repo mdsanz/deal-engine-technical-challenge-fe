@@ -1,27 +1,131 @@
-.flightCard {
-    border: 1px solid #ddd;
-    padding: 15px;
-    margin-bottom: 10px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
 .flightCardHeader {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .flightCardHeader:hover {
+    background-color: #e0e0e0;
+  }
+  
+  /* title: Estilo de la sección del título */
+  .title {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.flightCardExpanded {
-    padding-top: 10px;
-    transition: max-height 0.5s ease;
-    max-height: 500px;
-}
-
-.flightCard:hover {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-}
-
-.flightCardExpanded p {
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+  }
+  
+  .title h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
     margin: 0;
+  }
+  
+  .title h4 {
+    font-size: 1rem;
+    font-weight: normal;
+    color: #555;
+    margin: 0;
+  }
+  
+  /* description: Estilo para las descripciones de origen y destino */
+  .description {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .description div {
+    flex: 1;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .description h5 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  .description p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+  }
+  
+  /* Responsividad */
+  @media (max-width: 768px) {
+    .flightCardHeader {
+      padding: 15px;
+    }
+  
+    .title {
+      flex-direction: column;
+      gap: 5px;
+    }
+  
+    .description {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .title h3 {
+      font-size: 1.1rem;
+    }
+  
+    .title h4 {
+      font-size: 0.9rem;
+    }
+  
+    .description h5 {
+      font-size: 0.95rem;
+    }
+  
+    .description p {
+      font-size: 0.85rem;
+    }
+  }
+
+  .weatherDetails {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.weatherSection {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el contenido */
+}
+
+.weatherIcon img {
+    width: 100px;  /* Imagen del ícono más grande */
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.weatherDescription {
+    font-size: 0.8rem;  /* Descripción más pequeña */
+    text-align: center;
+    color: #555;
+    font-family: 'Poppins', sans-serif;
+}
+
+.weatherInfo {
+    font-size: 0.9rem;
+    color: #333;
+    margin-top: 5px;
+    text-align: center;
 }
